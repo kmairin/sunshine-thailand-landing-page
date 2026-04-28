@@ -145,6 +145,7 @@ a:focus-visible { outline: 3px solid var(--blue-light); outline-offset: 3px; bor
   transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease, color 160ms ease;
   min-height: 48px;
 }
+.btn svg { width: 20px; height: 20px; flex-shrink: 0; }
 .btn-primary { background: var(--blue-deep); color: var(--white); box-shadow: var(--shadow-md); }
 .btn-primary:hover { color: var(--white); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 .btn-line { background: var(--line-green); color: var(--white); box-shadow: var(--shadow-md); }

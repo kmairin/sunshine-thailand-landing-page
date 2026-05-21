@@ -105,6 +105,19 @@ a:focus-visible { outline: 3px solid var(--blue-light); outline-offset: 3px; bor
   .brand-name small { display: none; }
 }
 
+/* ========== NAV NEW BADGE ========== */
+.nav-new { position: relative; display: inline-flex; align-items: center; gap: 8px; }
+.new-dot {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 0.65rem; font-weight: 800; letter-spacing: 0.05em;
+  background: var(--yellow); color: var(--blue-deep);
+  padding: 2px 7px; border-radius: 999px;
+  text-transform: uppercase;
+}
+@media (max-width: 820px) {
+  .nav-new { font-weight: 700; color: var(--blue-deep); }
+}
+
 /* ========== HERO ========== */
 .hero {
   position: relative; overflow: hidden;
@@ -138,6 +151,32 @@ a:focus-visible { outline: 3px solid var(--blue-light); outline-offset: 3px; bor
 .hero h1 { color: var(--blue-deep); }
 .hero .lead { font-size: 1.1rem; color: var(--ink); max-width: 540px; margin-bottom: 28px; }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Hero promo strip (announces drop-off service) */
+.hero-promo {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--blue-deep); color: var(--white);
+  padding: 10px 16px 10px 10px; border-radius: 999px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-md);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  max-width: 100%;
+}
+.hero-promo:hover { color: var(--white); transform: translateY(-1px); box-shadow: var(--shadow-lg); }
+.hero-promo .promo-badge {
+  background: var(--yellow); color: var(--blue-deep);
+  padding: 4px 10px; border-radius: 999px;
+  font-weight: 800; font-size: 0.75rem; letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+.hero-promo .promo-msg { font-size: 0.92rem; line-height: 1.35; }
+.hero-promo .promo-msg strong { color: var(--yellow); }
+.hero-promo .promo-arrow { font-weight: 800; }
+@media (max-width: 480px) {
+  .hero-promo { padding: 8px 14px 8px 8px; gap: 8px; }
+  .hero-promo .promo-msg { font-size: 0.82rem; }
+  .hero-promo .promo-arrow { display: none; }
+}
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   padding: 14px 24px; border-radius: 999px; font-weight: 700; font-size: 1rem;
@@ -185,6 +224,175 @@ a:focus-visible { outline: 3px solid var(--blue-light); outline-offset: 3px; bor
   .hero-image img { aspect-ratio: 16/10; max-height: 280px; }
   .hero-badges { left: 12px; top: 12px; }
   .badge { font-size: 0.78rem; padding: 7px 12px; }
+}
+
+/* ========== DROP-OFF SERVICE (new feature highlight) ========== */
+.dropoff {
+  background: var(--paper);
+  padding: 64px 0 72px;
+  position: relative;
+}
+.dropoff::before {
+  content: ""; position: absolute; inset: 0 0 auto; height: 8px;
+  background: linear-gradient(90deg, var(--yellow) 0%, var(--yellow) 33%, var(--blue-deep) 33%, var(--blue-deep) 66%, var(--line-green) 66%, var(--line-green) 100%);
+  opacity: 0.85;
+}
+.dropoff-card {
+  background: linear-gradient(180deg, var(--white) 0%, #FFFEF7 100%);
+  border-radius: var(--radius-lg);
+  padding: 48px 44px;
+  max-width: 1000px; margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(20, 58, 122, 0.08);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.dropoff-card::after {
+  content: ""; position: absolute; top: -120px; right: -120px;
+  width: 280px; height: 280px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 214, 10, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+@media (max-width: 820px) {
+  .dropoff { padding: 48px 0 56px; }
+  .dropoff-card { padding: 32px 22px; border-radius: var(--radius); }
+}
+
+.dropoff-newtag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-weight: 800; font-size: 0.82rem; letter-spacing: 0.06em;
+  color: var(--blue-deep);
+  padding: 6px 14px; border-radius: 999px;
+  background: var(--yellow); margin-bottom: 18px;
+  text-transform: uppercase;
+}
+.newtag-star { color: #DC2626; font-size: 1rem; }
+
+.dropoff-quote {
+  font-style: italic; color: var(--ink-soft);
+  font-size: 1.05rem; margin: 0 0 6px;
+}
+.dropoff-card h2 {
+  font-size: clamp(2rem, 4.8vw, 3rem);
+  margin: 0 0 18px;
+  color: var(--blue-deep);
+  line-height: 1.1;
+}
+.dropoff-hl {
+  background: linear-gradient(180deg, transparent 55%, var(--yellow) 55%);
+  padding: 0 8px;
+  color: var(--blue-deep);
+}
+
+.dropoff-hours {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 18px; border-radius: 999px;
+  background: var(--blue-bg); color: var(--blue-deep);
+  font-weight: 700; font-size: 1rem; margin-bottom: 28px;
+}
+.dropoff-hours svg { color: var(--blue-deep); }
+
+.dropoff-free {
+  display: inline-flex; align-items: center; gap: 16px;
+  background: var(--yellow-bg);
+  border: 2px solid var(--yellow);
+  border-radius: var(--radius);
+  padding: 16px 24px 16px 20px;
+  margin: 0 auto 26px;
+  text-align: left;
+  max-width: 540px;
+}
+.free-pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 1.4rem; letter-spacing: 0.02em;
+  background: var(--line-green); color: var(--white);
+  padding: 12px 18px; border-radius: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(6, 199, 85, 0.25);
+}
+.free-body { display: flex; flex-direction: column; gap: 2px; }
+.free-body strong { color: var(--blue-deep); font-size: 1.05rem; line-height: 1.25; }
+.free-body small { color: var(--ink-soft); font-size: 0.9rem; }
+@media (max-width: 520px) {
+  .dropoff-free { flex-direction: column; gap: 10px; text-align: center; align-items: center; padding: 18px; }
+  .free-pill { font-size: 1.2rem; padding: 10px 16px; }
+}
+
+.dropoff-pitch {
+  font-size: 1.05rem; color: var(--ink);
+  max-width: 720px; margin: 0 auto 36px;
+  line-height: 1.65;
+}
+
+.dropoff-steps {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  margin-bottom: 36px;
+  text-align: left;
+}
+@media (max-width: 900px) { .dropoff-steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .dropoff-steps { grid-template-columns: 1fr; } }
+.dropoff-step {
+  background: var(--white); border-radius: 14px; padding: 18px 16px;
+  border: 1px solid rgba(20, 58, 122, 0.1);
+  box-shadow: var(--shadow-sm);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  position: relative;
+}
+.dropoff-step:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.dropoff-step .num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--blue-deep); color: var(--yellow);
+  font-weight: 800; font-size: 0.95rem; margin-bottom: 10px;
+}
+.dropoff-step h3 { font-size: 0.98rem; margin-bottom: 4px; color: var(--blue-deep); }
+.dropoff-step p { font-size: 0.85rem; color: var(--ink-soft); margin: 0; line-height: 1.45; }
+
+.dropoff-menu {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  background: var(--paper);
+  border-radius: var(--radius);
+  border: 1px solid rgba(20, 58, 122, 0.1);
+  padding: 22px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+.dropoff-menu .menu-col { padding: 6px 18px; }
+.dropoff-menu .menu-col + .menu-col { border-left: 1px dashed rgba(20, 58, 122, 0.18); }
+.menu-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em;
+  color: var(--blue); text-transform: uppercase; margin-bottom: 6px;
+}
+.menu-label svg { color: var(--blue-deep); }
+.dropoff-menu strong { display: block; color: var(--blue-deep); font-size: 1.05rem; margin-bottom: 4px; }
+.dropoff-menu small { color: var(--ink-soft); font-size: 0.85rem; }
+@media (max-width: 640px) {
+  .dropoff-menu { grid-template-columns: 1fr; gap: 16px; }
+  .dropoff-menu .menu-col + .menu-col { border-left: 0; border-top: 1px dashed rgba(20, 58, 122, 0.18); padding-top: 16px; }
+}
+
+.dropoff-late {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: var(--yellow-bg);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin: 0 auto 28px;
+  max-width: 720px;
+  text-align: left;
+}
+.dropoff-late svg { color: var(--blue-deep); flex-shrink: 0; margin-top: 2px; }
+.dropoff-late p { margin: 0; font-size: 0.95rem; color: var(--ink); line-height: 1.5; }
+
+.dropoff-ctas {
+  display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+  margin-bottom: 20px;
+}
+
+.dropoff-foot {
+  font-style: italic; color: var(--ink-soft);
+  font-size: 0.98rem; margin: 8px 0 0;
 }
 
 /* ========== SECTIONS ========== */

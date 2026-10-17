@@ -1,0 +1,24 @@
+# Site audit: https://sunshine-wash-and-dry.cclaundrysystem.com (2026-10-17)
+
+## Site-wide
+
+- robots.txt: 200, names a sitemap
+- sitemap https://sunshine-wash-and-dry.cclaundrysystem.com/sitemap.xml: 200, 6 URLs, 0 with lastmod (only keep lastmod if it is a real edit date)
+- llms.txt: 200, 2758 chars
+- llms-full.txt: 404
+- http://sunshine-wash-and-dry.cclaundrysystem.com/: 200 (**should redirect to https**)
+- https://www.sunshine-wash-and-dry.cclaundrysystem.com/: no answer
+- made-up path: 404
+
+## Pages (6)
+
+| Page | Status | lang | Title (chars) | Desc (chars) | hreflang | Page code types | Problems |
+|---|---|---|---|---|---|---|---|
+| / | 200 | th | 56 | 149 | th en x-default | DryCleaningOrLaundry, PostalAddress, GeoCoordinates, Place, AdministrativeArea, OpeningHoursSpecification, ContactPoint, OfferCatalog, Offer, Service, FAQPage, Question, Answer | ok |
+| /en/ | 200 | en | 56 | 144 | th en x-default | DryCleaningOrLaundry, PostalAddress, GeoCoordinates, Place, AdministrativeArea, OpeningHoursSpecification, ContactPoint, Offer, Service, OfferCatalog, FAQPage, Question, Answer | ok |
+| /wash-dry-fold/ | 200 | th | 52 | 147 | th en x-default | Service, Place, OpeningHoursSpecification, Offer, BreadcrumbList, ListItem, FAQPage, Question, Answer | ok |
+| /en/wash-dry-fold/ | 200 | en | 57 | 153 | th en x-default | Service, Place, OpeningHoursSpecification, Offer, BreadcrumbList, ListItem, FAQPage, Question, Answer | ok |
+| /comforter-wash/ | 200 | th | 54 | 153 | th en x-default | Service, Place, OpeningHoursSpecification, Offer, BreadcrumbList, ListItem, FAQPage, Question, Answer | ok |
+| /en/comforter-wash/ | 200 | en | 56 | 141 | th en x-default | Service, Place, OpeningHoursSpecification, Offer, BreadcrumbList, ListItem, FAQPage, Question, Answer | ok |
+
+0 of 6 pages have something to fix.

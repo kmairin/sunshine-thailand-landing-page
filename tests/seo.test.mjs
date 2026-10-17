@@ -1,4 +1,4 @@
-// SEO guard rails for the static site. Run: node --test tests/
+// SEO guard rails for the static site. Run: node --test
 // Each check protects something a later copy edit could silently undo.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';

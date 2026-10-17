@@ -47,7 +47,7 @@ text in `scripts/build.mjs`, then run:
 
 ```bash
 node scripts/build.mjs
-node --test tests/
+node --test
 ```
 
 ## Owner actions (I could not do these)

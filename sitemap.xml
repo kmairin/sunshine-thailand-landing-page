@@ -3,20 +3,38 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://sunshine-wash-and-dry.cclaundrysystem.com/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="th" href="https://sunshine-wash-and-dry.cclaundrysystem.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sunshine-wash-and-dry.cclaundrysystem.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sunshine-wash-and-dry.cclaundrysystem.com/"/>
   </url>
   <url>
     <loc>https://sunshine-wash-and-dry.cclaundrysystem.com/en/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="th" href="https://sunshine-wash-and-dry.cclaundrysystem.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sunshine-wash-and-dry.cclaundrysystem.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sunshine-wash-and-dry.cclaundrysystem.com/"/>
+  </url>
+  <url>
+    <loc>https://sunshine-wash-and-dry.cclaundrysystem.com/wash-dry-fold/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://sunshine-wash-and-dry.cclaundrysystem.com/wash-dry-fold/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sunshine-wash-and-dry.cclaundrysystem.com/en/wash-dry-fold/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sunshine-wash-and-dry.cclaundrysystem.com/wash-dry-fold/"/>
+  </url>
+  <url>
+    <loc>https://sunshine-wash-and-dry.cclaundrysystem.com/en/wash-dry-fold/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://sunshine-wash-and-dry.cclaundrysystem.com/wash-dry-fold/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sunshine-wash-and-dry.cclaundrysystem.com/en/wash-dry-fold/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sunshine-wash-and-dry.cclaundrysystem.com/wash-dry-fold/"/>
+  </url>
+  <url>
+    <loc>https://sunshine-wash-and-dry.cclaundrysystem.com/comforter-wash/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://sunshine-wash-and-dry.cclaundrysystem.com/comforter-wash/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sunshine-wash-and-dry.cclaundrysystem.com/en/comforter-wash/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sunshine-wash-and-dry.cclaundrysystem.com/comforter-wash/"/>
+  </url>
+  <url>
+    <loc>https://sunshine-wash-and-dry.cclaundrysystem.com/en/comforter-wash/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://sunshine-wash-and-dry.cclaundrysystem.com/comforter-wash/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sunshine-wash-and-dry.cclaundrysystem.com/en/comforter-wash/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sunshine-wash-and-dry.cclaundrysystem.com/comforter-wash/"/>
   </url>
 </urlset>

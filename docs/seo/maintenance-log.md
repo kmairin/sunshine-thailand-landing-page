@@ -20,6 +20,7 @@ Newest first. One line per check; link the full file when there is one.
 
 | Date | Where | Change | Why | Indexing requested |
 |---|---|---|---|---|
+| 2026-10-27 | Website + Maps listing | Phone number removed (site live; listing change pending Google review) | Owner: LINE Official only | n/a |
 | 2026-10-26 | Cloudflare | Always Use HTTPS on (owner) | http did not redirect | n/a |
 | 2026-10-26 | Print | Review card with QR to the review link (`print/review-card-A5.pdf`) | AI answers miss wash-and-fold; reviews feed them | n/a |
 | 2026-10-26 | Google Maps listing | New description (ร้านซักผ้า, ฝากซักผ้า, ซักอบพับ เสาร์-อาทิตย์, ซักผ้านวม); added services "บริการซักและพับเสื้อผ้า" and "ฝากซักอบพับ เสาร์-อาทิตย์ 9:00-20:00 ฟรีค่าบริการ" | Maps missed us for ซักอบพับ | n/a (Google review pending) |

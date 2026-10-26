@@ -83,7 +83,8 @@ node --test
 - **2026-12-17:** same again; compare with `baseline-2026-10-17.md`.
 
 Every measurement appends rows to `tracking/` (see `tracking/README.md`) and gets a short
-`measure-YYYY-MM-DD.md` write-up. Latest: `measure-2026-10-26.md`.
+`measure-YYYY-MM-DD.md` write-up. Latest: `measure-2026-10-26.md`; before vs after summary:
+`before-after-2026-10-27.md`.
 
 ## Maintenance
 

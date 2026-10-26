@@ -74,13 +74,16 @@ node --test
   logged-out check of the baseline term list.
 - **2026-12-17:** same again; compare with `baseline-2026-10-17.md`.
 
+Every measurement appends rows to `tracking/` (see `tracking/README.md`) and gets a short
+`measure-YYYY-MM-DD.md` write-up. Latest: `measure-2026-10-26.md`.
+
 ## Maintenance
 
 | How often | What |
 |---|---|
 | Weekly, 10 min | Search Console → Performance → queries; note new ones and positions |
 | After any new page | Add it to `tests/seo.test.mjs` PAGES and sitemap, resubmit sitemap, request indexing |
-| Monthly | Same logged-out search check; keyword suggestions again |
+| Monthly | Same logged-out search check (organic, map box, Maps at the shop); AI-answer check (`aeo-check/`); keyword suggestions again |
 | Every price/hours change | Edit home pages, run `node scripts/build.mjs`, update `llms.txt`, run tests |
 
 ## Mistakes not to repeat

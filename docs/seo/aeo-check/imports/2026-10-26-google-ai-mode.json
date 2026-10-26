@@ -1,0 +1,65 @@
+{
+  "engine": "google_ai_mode",
+  "label": "Google AI Mode (google.com, signed out, gl=th)",
+  "method": "import",
+  "captured_at": "2026-10-26T19:30:00Z",
+  "note": "Collected by hand in a signed-out browser on 2026-10-26, about 30 minutes after the Business Profile description was edited. Answers are excerpts (the shops named, in order, and what was said about Sunshine), not the full text. AI Mode cites Google Maps listings rather than web pages, so 'sources' are the Maps cards shown under each answer.",
+  "items": [
+    { "question": "ร้านซักผ้า บางพลี ที่ไหนดี",
+      "answer": "ย่านบางพลีมีร้านซักผ้าและร้านสะดวกซักหลายแห่งที่ได้รีวิวดี 1. ร้านสะดวกซัก 24 ชั่วโมง: Sunshine ซัก+อบ 4.9 (47) จุดเด่น: ใช้เครื่องอุตสาหกรรม Speed Queen สะอาด มีบริการเสริมช่วงวันหยุดเสาร์-อาทิตย์ (มีบริการฝากซัก อบ พับฟรีค่าบริการ จ่ายแค่ค่าเครื่อง) มีที่จอดรถและกล้องวงจรปิด พิกัด 168 บางโฉลง; FAMILY PRO 4.1 (22) ราชาเทวะ. 2. ร้านซักอบรีด: ปิ่น ซักแห้ง ซักอบรีด 5.0 (56); A Clean ซัก อบ รีด ซักแห้ง 4.7 (3); ALL CLEAN ร้านซัก อบ รีด 4.5 (11). [excerpt]",
+      "sources": [
+        { "url": "https://www.google.com/maps/search/Sunshine+%E0%B8%8B%E0%B8%B1%E0%B8%81%2B%E0%B8%AD%E0%B8%9A", "title": "Sunshine ซัก+อบ (Maps card)", "cited": true },
+        { "url": "https://www.google.com/maps/search/FAMILY+PRO", "title": "ร้านสะดวกซัก 24 ชม. FAMILY PRO (Maps card)", "cited": true },
+        { "url": "https://www.google.com/maps/search/Pin+laundry", "title": "ปิ่น ซักแห้ง ซักอบรีด (Maps card)", "cited": true } ] },
+    { "question": "ร้านสะดวกซัก 24 ชม. แถวบางโฉลง",
+      "answer": "ย่านบางโฉลงมีร้านสะดวกซัก 24 ชั่วโมงหลายแห่ง: Sunshine ซัก+อบ พิกัด 168 ตำบลบางโฉลง จุดเด่น: เครื่อง Speed Queen เกรดอุตสาหกรรม สแกน QR PromptPay หรือหยอดเหรียญ ร้านสว่างและมีที่จอดรถ; Otteri wash & dry CJ MORE บางโฉลง; WashXpress ม.หัวเฉียว; WASHENJOY สาขา ม.หัวเฉียว; ซักให้ - สาขาบางโฉลง. [excerpt]",
+      "sources": [
+        { "url": "https://www.google.com/maps/search/Sakhai+Bang+Chalong", "title": "ซักให้ - สาขาบางโฉลง (Maps card)", "cited": true },
+        { "url": "https://www.google.com/maps/search/TANJAI+WASH+DRY", "title": "TANJAI WASH & DRY บางโฉลง (Maps card)", "cited": true },
+        { "url": "https://www.google.com/maps/search/Sunshine+%E0%B8%8B%E0%B8%B1%E0%B8%81%2B%E0%B8%AD%E0%B8%9A", "title": "Sunshine ซัก+อบ (Maps card)", "cited": true } ] },
+    { "question": "ร้านซักผ้าหยอดเหรียญ ใกล้เมกาบางนา",
+      "answer": "ร้านใกล้เมกาบางนา: SPACE LAUNDRY (Trendy Wash) 4.8 (8) ซอยราชวินิตบางแก้ว; 24wash สาขาเปรมฤทัย 20 (ซอยบางนา-ตราด 37) 4.5 (26); Otteri wash&dry สาขาพาร์คแลนด์ บางนา-ตราด 37 5.0 (4). [excerpt]",
+      "sources": [
+        { "url": "https://www.google.com/maps/search/24wash", "title": "24wash สาขาเปรมฤทัย20 (Maps card)", "cited": true },
+        { "url": "https://www.google.com/maps/search/SPACE+LAUNDRY", "title": "SPACE LAUNDRY (Trendy Wash) (Maps card)", "cited": true },
+        { "url": "https://www.google.com/maps/search/Otteri+Parkland", "title": "Otteri wash&dry พาร์คแลนด์ (Maps card)", "cited": true } ] },
+    { "question": "ฝากซักผ้า ซักอบพับ บางพลี",
+      "answer": "บริการซักอบพับในโซนบางพลี: ปิ่น ซักแห้ง ซักอบรีด 5.0 (56) ซอยกิ่งแก้ว 14/1; ซักให้ สาขา หมู่บ้านนิลุบลวิลล์ 5.0 (26); A Clean ซัก อบ รีด ซักแห้ง 4.7 (3) มีบริการรับ-ส่ง. [excerpt]",
+      "sources": [
+        { "url": "https://www.google.com/maps/search/Pin+laundry", "title": "ปิ่น ซักแห้ง ซักอบรีด (Maps card)", "cited": true },
+        { "url": "https://www.google.com/maps/search/Sakhai+Nilubon", "title": "ซักให้ สาขา หมู่บ้านนิลุบลวิลล์ (Maps card)", "cited": true },
+        { "url": "https://www.google.com/maps/search/A+Clean", "title": "A Clean ซัก อบ รีด ซักแห้ง (Maps card)", "cited": true } ] },
+    { "question": "ซักอบพับ ฟรีค่าบริการ วันเสาร์อาทิตย์ แถวบางพลี",
+      "answer": "บริการซัก-อบ-พับที่มีโปรรับ-ส่งฟรีในย่านบางพลี-บางแก้ว ที่เปิดเสาร์-อาทิตย์: แทบ-บิท ซักรีด ซักแห้ง ซักรองเท้า (รับ-ส่งฟรี 5 กม.); ปิ่น ซักแห้ง ซักอบรีด (เสาร์-อาทิตย์ 07:00-19:00). [excerpt]",
+      "sources": [
+        { "url": "https://www.google.com/maps/search/Tabbit+laundry", "title": "แทบ-บิท ซักรีด ซักแห้ง (Maps card)", "cited": true },
+        { "url": "https://www.google.com/maps/search/Pin+laundry", "title": "ปิ่น ซักแห้ง ซักอบรีด (Maps card)", "cited": true } ] },
+    { "question": "ซักผ้านวม บางพลี ราคาเท่าไหร่",
+      "answer": "ราคาซักผ้านวมในบางพลี: ร้านสะดวกซัก 24 ชม. เครื่อง 14-18 กก. ประมาณ 50-80 บาท อบ 40-60 บาท รวม 90-140 บาท; ร้านซักรีดผืนละ 100-250 บาท ตัวอย่างร้าน: A Clean ซัก อบ รีด ซักแห้ง, แทบ-บิท ซักรีด ซักแห้ง. [excerpt]",
+      "sources": [
+        { "url": "https://www.google.com/maps/search/Tabbit+laundry", "title": "แทบ-บิท ซักรีด ซักแห้ง (Maps card)", "cited": true },
+        { "url": "https://www.google.com/maps/search/A+Clean", "title": "A Clean ซัก อบ รีด ซักแห้ง (Maps card)", "cited": true } ] },
+    { "question": "ร้านซักผ้าจ่าย PromptPay ได้ แถวบางพลี",
+      "answer": "ร้านสะดวกซักบางพลีที่รองรับพร้อมเพย์: Smile Wash 4.2 (6) ซอยวัดหลวงพ่อโต; 24wash 4.5 (26) ซอยบางนา-ตราด 37; Otteri Wash & Dry 4.3 (6) ซ.บางแวก 116 (สแกนจ่ายผ่านแอป). [excerpt]",
+      "sources": [
+        { "url": "https://www.google.com/maps/search/Smile+Wash+SW-003", "title": "(SW-003) Smile Wash (Maps card)", "cited": true },
+        { "url": "https://www.facebook.com/", "title": "Facebook post, Otteri wash & dry", "cited": true },
+        { "url": "https://www.instagram.com/", "title": "Instagram post, otterituebohyala", "cited": true } ] },
+    { "question": "laundromat near Mega Bangna",
+      "answer": "Top-rated 24-hour laundromats near Mega Bangna: Pumpkin Laundry 5.0 (113); BeeWash 24 hours (A Space Mega 1) 5.0 (2), self-service and drop-off wash, dry and fold; BearWash Laundry (Lumpini Megacity Bangna); SPACE LAUNDRY / Trendy Wash 4.8 (8); 24wash (Soi Bangna-Trat 37) 4.5 (26). [excerpt]",
+      "sources": [
+        { "url": "https://www.google.com/maps/search/Pumpkin+Laundry", "title": "Pumpkin Laundry (Maps card)", "cited": true },
+        { "url": "https://www.google.com/maps/search/BeeWash", "title": "BeeWash (Maps card)", "cited": true },
+        { "url": "https://www.google.com/maps/search/BearWash", "title": "BearWash Laundry (Maps card)", "cited": true } ] },
+    { "question": "wash and fold laundry service Bang Phli",
+      "answer": "Wash-and-fold options in Bang Phli: Pin Dry Clean & Laundry; Code Clean (PTT Khlong Khut); Otteri Wash & Dry; Smart Wash & Dry; SIMPLY Laundry Bangkok; WashDrop. [excerpt]",
+      "sources": [
+        { "url": "https://www.google.com/maps/search/Pin+laundry", "title": "ปิ่น ซักแห้ง ซักอบรีด (Maps card)", "cited": true },
+        { "url": "https://www.google.com/maps/search/Code+Clean", "title": "Code Clean (Maps card)", "cited": true } ] },
+    { "question": "24 hour laundromat near Suvarnabhumi airport",
+      "answer": "24-hour laundromats near Suvarnabhumi: Code Clean X 7-11 (King Kaew 37); Dry & Wash (Racha Thewa); Sunny Wash Club (Lat Krabang); Otteri Wash & Dry (Lat Krabang branches). [excerpt]",
+      "sources": [
+        { "url": "https://www.google.com/maps/search/Code+Clean+King+Kaew+37", "title": "Code Clean X 7-11 (Maps card)", "cited": true },
+        { "url": "https://www.google.com/maps/search/Sunny+Wash+Club", "title": "Sunny Wash Club (Maps card)", "cited": true } ] }
+  ]
+}

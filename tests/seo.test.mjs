@@ -143,3 +143,31 @@ test('llms.txt summarises the shop for AI engines', () => {
     assert.ok(t.includes(s), `llms.txt missing "${s}"`);
   }
 });
+
+// Tracking files in docs/seo/tracking are edited by hand each month; keep them parseable.
+const csv = (f) => read(f).trim().split('\n').map((l) => l.split(','));
+
+test('rankings.csv rows are well formed', () => {
+  const [head, ...rows] = csv('docs/seo/tracking/rankings.csv');
+  assert.deepEqual(head, ['date', 'surface', 'term', 'position', 'note']);
+  assert.ok(rows.length > 0);
+  for (const r of rows) {
+    assert.equal(r.length, 5, `wrong column count: ${r.join(',')}`);
+    assert.match(r[0], /^\d{4}-\d{2}-\d{2}$/);
+    assert.ok(['google_organic', 'google_map_box', 'google_maps_at_shop', 'bing_organic'].includes(r[1]), `unknown surface ${r[1]}`);
+    assert.ok(r[3] === '' || /^\d+$/.test(r[3]), `position must be a number or empty: ${r.join(',')}`);
+    if (r[3] === '') assert.ok(r[4], `empty position needs a note: ${r.join(',')}`);
+  }
+});
+
+test('search-console.csv and aeo.csv rows are well formed', () => {
+  for (const [f, cols] of [['docs/seo/tracking/search-console.csv', 10], ['docs/seo/tracking/aeo.csv', 7]]) {
+    const [head, ...rows] = csv(f);
+    assert.equal(head.length, cols, f);
+    assert.ok(rows.length > 0, f);
+    for (const r of rows) {
+      assert.equal(r.length, cols, `${f}: ${r.join(',')}`);
+      assert.match(r[0], /^\d{4}-\d{2}-\d{2}$/);
+    }
+  }
+});

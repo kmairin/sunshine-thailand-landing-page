@@ -1,0 +1,12 @@
+[
+  { "id": "q01", "lang": "th", "text": "ร้านซักผ้า บางพลี ที่ไหนดี" },
+  { "id": "q02", "lang": "th", "text": "ร้านสะดวกซัก 24 ชม. แถวบางโฉลง" },
+  { "id": "q03", "lang": "th", "text": "ร้านซักผ้าหยอดเหรียญ ใกล้เมกาบางนา" },
+  { "id": "q04", "lang": "th", "text": "ฝากซักผ้า ซักอบพับ บางพลี" },
+  { "id": "q05", "lang": "th", "text": "ซักอบพับ ฟรีค่าบริการ วันเสาร์อาทิตย์ แถวบางพลี" },
+  { "id": "q06", "lang": "th", "text": "ซักผ้านวม บางพลี ราคาเท่าไหร่" },
+  { "id": "q07", "lang": "th", "text": "ร้านซักผ้าจ่าย PromptPay ได้ แถวบางพลี" },
+  { "id": "q08", "lang": "en", "text": "laundromat near Mega Bangna" },
+  { "id": "q09", "lang": "en", "text": "wash and fold laundry service Bang Phli" },
+  { "id": "q10", "lang": "en", "text": "24 hour laundromat near Suvarnabhumi airport" }
+]

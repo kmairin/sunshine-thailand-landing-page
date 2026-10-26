@@ -139,7 +139,7 @@ test('home page links to both service pages in raw HTML', () => {
 test('llms.txt summarises the shop for AI engines', () => {
   assert.ok(exists('llms.txt'), 'llms.txt missing');
   const t = read('llms.txt');
-  for (const s of ['Sunshine Wash & Dry', '168', 'บางโฉลง', '24', '9:00', '20:00', '50', '092-272-0955', '/wash-dry-fold/', '/comforter-wash/']) {
+  for (const s of ['Sunshine Wash & Dry', '168', 'บางโฉลง', '24', '9:00', '20:00', '50', 'lin.ee/V77IMtH', '/wash-dry-fold/', '/comforter-wash/']) {
     assert.ok(t.includes(s), `llms.txt missing "${s}"`);
   }
 });
@@ -169,5 +169,15 @@ test('search-console.csv and aeo.csv rows are well formed', () => {
       assert.equal(r.length, cols, `${f}: ${r.join(',')}`);
       assert.match(r[0], /^\d{4}-\d{2}-\d{2}$/);
     }
+  }
+});
+
+// Owner directive 2026-10-27: no phone number anywhere on the site; LINE Official is the only contact.
+test('no phone number on any page, in page data or in llms.txt', () => {
+  const files = [...Object.values(PAGES), 'llms.txt', '404.html', 'print/review-card.html', 'scripts/build.mjs'];
+  for (const f of files) {
+    const s = read(f);
+    assert.doesNotMatch(s, /092[-\s]?272[-\s]?0955|\+?66\s?92\s?272\s?0955|tel:/, `${f} still has the phone number`);
+    assert.doesNotMatch(s, /"telephone"/, `${f} still has telephone in page data`);
   }
 });

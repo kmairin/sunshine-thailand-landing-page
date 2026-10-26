@@ -175,9 +175,9 @@ ${header(p.lang, p.path, p.lang === 'th' ? p.alt.en : p.alt.th)}
             <svg aria-hidden="true"><use href="#i-line"/></svg>
             ${p.lang === 'th' ? 'แอด LINE' : 'Add us on LINE'}
           </a>
-          <a class="btn btn-outline" href="tel:+66922720955">
-            <svg aria-hidden="true"><use href="#i-phone"/></svg>
-            ${p.lang === 'th' ? 'โทร 092-272-0955' : 'Call 092-272-0955'}
+          <a class="btn btn-outline" href="${MAPS}" target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="#i-pin"/></svg>
+            ${p.lang === 'th' ? 'นำทางไปร้าน' : 'Directions'}
           </a>
         </div>
       </div>

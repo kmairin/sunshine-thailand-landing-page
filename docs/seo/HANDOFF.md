@@ -68,6 +68,14 @@ node --test
 5. **Pickup and delivery (รับ-ส่ง)** is heavily searched. If you ever offer it, it deserves its
    own page.
 
+## Reviews and Maps posts
+
+- Review link (opens Google's "write a review" for the shop): https://g.page/r/CY255T5TkoE0EBM/review
+- Printable counter card with that QR code and the LINE QR: `print/review-card-A5.pdf`
+  (source `print/review-card.html`). Ask customers to say which service they used; never offer a
+  reward for a review and never ask only happy customers (both break Google's rules).
+- Post drafts and history: `docs/seo/gbp-posts.md`.
+
 ## Re-measure dates
 
 - **2026-11-17:** Search Console Pages (indexed count) and Performance (impressions, queries);

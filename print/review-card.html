@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>Review card — Sunshine Wash &amp; Dry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;800&display=swap">
+<style>
+  /* Printable card for the shop counter or wall. Print at A5 (or A4, it scales), no margins. */
+  @page { size: A5 portrait; margin: 0; }
+  :root { --yellow: #FFD60A; --blue: #143A7A; --ink: #0E1B3D; --soft: #4A5374; --line: #06C755; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #e9e9e9; font-family: 'Sarabun', system-ui, sans-serif; color: var(--ink); }
+  .card { width: 148mm; height: 210mm; margin: 10mm auto; background: #FFFCF2; display: flex; flex-direction: column;
+          border-top: 14mm solid var(--yellow); padding: 10mm 12mm 9mm; }
+  .brand { display: flex; align-items: center; gap: 4mm; margin-top: -21mm; }
+  .brand img { width: 18mm; height: 18mm; border-radius: 50%; border: 1.2mm solid #fff; }
+  .brand b { font-size: 5.2mm; color: var(--blue); }
+  h1 { font-size: 10.5mm; line-height: 1.15; margin: 8mm 0 2mm; color: var(--blue); }
+  .lead { font-size: 4.6mm; margin: 0 0 5mm; color: var(--soft); }
+  .qr { display: flex; align-items: center; gap: 6mm; }
+  .qr img { width: 58mm; height: 58mm; background: #fff; padding: 2mm; border-radius: 3mm; border: 0.6mm solid var(--blue); }
+  .steps { margin: 0; padding-left: 5mm; font-size: 4.6mm; line-height: 1.55; }
+  .steps b { color: var(--blue); }
+  .ideas { margin: 6mm 0 0; font-size: 4mm; color: var(--soft); }
+  .chips { display: flex; flex-wrap: wrap; gap: 2mm; margin-top: 2mm; }
+  .chips span { background: var(--yellow); color: var(--ink); font-weight: 600; font-size: 3.9mm; padding: 1mm 3mm; border-radius: 10mm; }
+  .line { margin-top: auto; display: flex; align-items: center; gap: 4mm; border-top: 0.4mm dashed #c9c3a8; padding-top: 5mm; }
+  .line img { width: 24mm; height: 24mm; background: #fff; padding: 1mm; border-radius: 2mm; border: 0.6mm solid var(--line); }
+  .line p { margin: 0; font-size: 4mm; line-height: 1.45; }
+  .line b { color: var(--line); }
+  .thanks { margin: 4mm 0 0; font-size: 3.6mm; color: var(--soft); text-align: center; }
+  @media print { body { background: none; } .card { margin: 0; } }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand"><img src="/assets/logo.jpg" alt=""><b>Sunshine Wash &amp; Dry · บางโฉลง</b></div>
+
+    <h1>ช่วยรีวิวร้านเราใน Google หน่อยนะ</h1>
+    <p class="lead">ใช้เวลาไม่ถึง 1 นาที ช่วยให้เพื่อนบ้านแถวบางโฉลง บางพลี หาร้านเราเจอ</p>
+
+    <div class="qr">
+      <img src="review-qr.svg" alt="QR code สำหรับรีวิว Sunshine ซัก+อบ ใน Google">
+      <ol class="steps">
+        <li>สแกน QR</li>
+        <li>ให้ดาวตามจริง</li>
+        <li>เขียนสั้นๆ ว่า<b>ใช้บริการอะไร</b></li>
+      </ol>
+    </div>
+
+    <p class="ideas">เช่น ใช้บริการแบบไหนมา:</p>
+    <div class="chips">
+      <span>ฝากซักอบพับ เสาร์-อาทิตย์</span>
+      <span>ซักผ้านวม เครื่อง 18 กก.</span>
+      <span>ซักอบเอง 24 ชม.</span>
+      <span>จ่าย QR PromptPay</span>
+    </div>
+
+    <div class="line">
+      <img src="line-qr.svg" alt="QR code แอด LINE Sunshine Wash & Dry">
+      <p><b>แอด LINE</b> ฝากซักอบพับ ทุกเสาร์-อาทิตย์ 9:00–20:00<br>ฟรีค่าบริการ จ่ายเฉพาะค่าเครื่องซัก-อบ<br>โทร 092-272-0955</p>
+    </div>
+    <p class="thanks">ขอบคุณที่ใช้บริการ Sunshine ซัก+อบ 💛</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sunshine Wash &amp; Dry · Results report, October 2026</title>
+<!--
+  SV Innovation story deck. 16:9, 1280 x 720 px per slide. Story and wording rules: references/story.md.
+  Built from the Blue Voyage deck presented on 8 Oct 2026 (the owner's favourite).
+  How to use:
+    1. Copy this folder to proposal/deck/. Put the client's images in img/ and point each src at them.
+    2. Replace every {{TOKEN}}. Keep, repeat or delete slides to fit the story (see the comment above each).
+       Slides marked data-optional are extras: delete them unless the story needs them.
+    3. Set --brand (headings, dark bands) and --accent (gold) in :root from the client's logo
+       (render.mjs colors). Every other shade is worked out from those two.
+    4. Render and check:
+       node <skill>/scripts/render.mjs pdf deck.html "../out/<Client> - SEO and AI Search Proposal.pdf" --client
+  One idea per slide. Headline = the takeaway, 7 words or fewer. At most two short sentences of body text.
+  The gauge, the first-year price total, the season bars and the page numbers are drawn by the script at
+  the bottom from data-* values: type only the numbers.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Trirong:wght@500;600;700&family=Anuphan:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  /* Client colours. --brand: the main dark colour of the logo. --accent: a warm second colour (gold works
+     for most luxury and travel brands). */
+  --brand: #143A7A;
+  --accent: #D9A400;
+  --ink: color-mix(in srgb, var(--brand) 55%, #000);          /* dark bands, chips, price card */
+  --eyebrow: color-mix(in srgb, var(--accent) 66%, #000);     /* small capitals above headlines */
+  --accent-soft: color-mix(in srgb, var(--accent) 35%, #fff); /* highlight word on dark bands */
+  --bg: #f4f0e5;
+  --card: #fbf8f1;
+  --line: #e9e2d4;
+  --rule: #d6d2c7;
+  --sand: #ece5d8;
+  --text: #4c5561;
+  --warn: #9a4a0a;
+  --warn-bg: #f7e6d2;
+  --warn-line: #e6b892;
+  --good: #1d6b47;
+  --good-bg: #e2efe5;
+  --display: "Trirong", Georgia, serif;
+  --body: "Anuphan", "Helvetica Neue", Arial, sans-serif;
+}
+@page { size: 13.333in 7.5in; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #8a8a8a; }
+body { font-family: var(--body); color: var(--brand); -webkit-font-smoothing: antialiased; }
+.slide { width: 1280px; height: 720px; position: relative; overflow: hidden; background: var(--bg); break-after: page; page-break-after: always; }
+.slide:last-of-type { break-after: auto; page-break-after: auto; }
+.eyebrow { position: absolute; left: 80px; top: 46px; font: 700 15px/1 var(--body); letter-spacing: .2em; text-transform: uppercase; color: var(--eyebrow); }
+h2 { position: absolute; left: 80px; right: 80px; top: 78px; margin: 0; font: 600 52px/1.12 var(--display); color: var(--brand); letter-spacing: -.005em; }
+h3 { margin: 0; font: 600 32px/1.15 var(--display); color: var(--brand); }
+p { margin: 0; }
+.body { position: absolute; left: 80px; right: 80px; top: 188px; bottom: 72px; }
+.foot { position: absolute; left: 80px; right: 80px; bottom: 0; height: 56px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; font: 500 15px var(--body); color: var(--text); }
+.foot .pn { font-weight: 700; color: var(--brand); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; }
+.band { background: var(--ink); color: #fff; border-radius: 16px; font: 600 26px/1.3 var(--body); text-align: center; padding: 22px 36px; }
+.band em, .hl { font-style: normal; color: var(--accent-soft); }
+.chip { display: inline-block; background: var(--ink); color: var(--accent-soft); border-radius: 999px; font: 700 14px/1 var(--body); letter-spacing: .08em; text-transform: uppercase; padding: 9px 13px; }
+.ic { width: 64px; height: 64px; color: var(--brand); }
+.ic .a { color: var(--accent); }
+.checks { list-style: none; margin: 0; padding: 0; }
+.checks li { position: relative; padding: 10px 0 10px 30px; border-top: 1px solid var(--line); font: 500 20px/1.3 var(--body); color: var(--brand); }
+.checks li::before { content: "✓"; position: absolute; left: 2px; top: 10px; color: var(--good); font-weight: 700; }
+.checks.ring li { padding-left: 50px; }
+.checks.ring li::before { left: 0; top: 7px; width: 34px; height: 34px; border-radius: 50%; background: var(--good-bg); display: flex; align-items: center; justify-content: center; font-size: 17px; }
+.proof { background: #fff; border-radius: 16px; box-shadow: 0 10px 30px rgba(16, 36, 58, .14); overflow: hidden; position: relative; }
+.proof img { display: block; width: 100%; height: auto; }
+.proof .mark { position: absolute; border: 3px solid var(--accent); border-radius: 8px; }
+.cap { margin-top: 12px; font: 500 18px/1.35 var(--body); color: var(--text); }
+.cap b { color: var(--brand); }
+img.fill { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* 1 cover and 21 next step: photo with a dark wash */
+.photo { color: #fff; background-size: cover; background-position: center; }
+.photo::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, color-mix(in srgb, var(--ink) 88%, transparent) 0%, color-mix(in srgb, var(--ink) 62%, transparent) 55%, color-mix(in srgb, var(--ink) 35%, transparent) 100%); }
+.photo > * { position: relative; }
+.cover .logo { position: absolute; left: 100px; top: 150px; width: 84px; height: auto; }
+.cover .eyebrow, .next .eyebrow { position: absolute; color: var(--accent-soft); font-size: 22px; letter-spacing: .16em; }
+.cover .eyebrow { left: 80px; top: 306px; }
+.cover h1 { position: absolute; left: 80px; top: 330px; width: 760px; margin: 0; font: 600 74px/1.08 var(--display); color: #fff; }
+.cover .sub { position: absolute; left: 80px; top: 516px; width: 640px; font: 500 22px/1.55 var(--body); color: #fff; }
+
+/* 2 the 30-second version */
+.s-short .body { display: grid; grid-template-rows: repeat(3, 1fr); gap: 20px; top: 194px; bottom: 82px; }
+.s-short .card { display: grid; grid-template-columns: 112px 1fr; align-items: center; padding: 0 40px 0 24px; }
+.s-short .n { font: 600 64px/1 var(--display); color: var(--accent); text-align: center; }
+.s-short h3 { font-size: 34px; }
+.s-short p { margin-top: 6px; font: 500 20px/1.35 var(--body); color: var(--text); }
+
+/* 3 three doors */
+.s-doors .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; height: 308px; margin-top: 20px; }
+.s-doors .card { display: flex; flex-direction: column; align-items: center; padding: 46px 30px 0; text-align: center; }
+.s-doors .ic { width: 92px; height: 92px; margin-bottom: 26px; }
+.s-doors h3 { font-size: 34px; }
+.s-doors p { margin-top: 12px; font: 500 20px/1.45 var(--body); color: var(--text); }
+.s-doors .band { margin-top: 24px; }
+
+/* 4, 5 stats + proof */
+.s-proof .body { display: grid; grid-template-columns: 440px 1fr; gap: 42px; align-items: center; }
+.s-proof .proof img { max-height: 420px; object-fit: contain; }
+.s-proof.big-shot .body { grid-template-columns: 520px 1fr; }
+.stats { display: flex; flex-direction: column; }
+.stat { display: grid; grid-template-columns: 246px 1fr; align-items: center; padding: 18px 0; border-top: 1px solid var(--rule); }
+.stat:first-child { border-top: 0; }
+.stat .v { font: 600 66px/1 var(--display); color: var(--brand); white-space: nowrap; }
+.stat .v.small { font-size: 44px; }
+.stat .l { font: 500 23px/1.38 var(--body); color: var(--brand); }
+.bad .stat .v { color: var(--warn); }
+
+/* 6 lesson */
+.s-lesson .say { position: absolute; left: 80px; right: 340px; top: 176px; font: 600 40px/1.4 var(--display); color: var(--brand); }
+.s-lesson .say mark { background: var(--warn-bg); color: var(--warn); border-radius: 8px; padding: 0 8px; }
+.s-lesson .shot { position: absolute; left: 80px; width: 940px; top: 294px; }
+.s-lesson .shot .proof { display: inline-block; max-width: 100%; vertical-align: top; }
+.s-lesson .shot .proof img { width: auto; max-width: 100%; max-height: 196px; }
+.s-lesson .left { position: absolute; left: 80px; width: 540px; bottom: 82px; font: 500 23px/1.45 var(--body); color: var(--text); }
+.s-lesson .band { position: absolute; right: 80px; width: 548px; bottom: 76px; text-align: left; font-size: 25px; padding: 20px 28px; }
+
+/* 7 pillars */
+.s-pillars .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; height: 372px; margin-top: -14px; }
+.s-pillars .card { position: relative; padding: 26px 26px 0; }
+.s-pillars .ic { width: 58px; height: 58px; }
+.s-pillars .num { position: absolute; right: 24px; top: 8px; font: 600 64px/1 var(--display); color: var(--accent); opacity: .22; }
+.s-pillars h3 { margin-top: 14px; font-size: 34px; }
+.s-pillars .chip { margin: 10px 0 14px; }
+.s-pillars .checks li { font-size: 19px; padding: 8px 0 8px 28px; }
+.s-pillars .checks li::before { top: 8px; }
+.s-pillars .band { margin-top: 22px; padding: 16px; }
+
+/* 8 two views */
+.s-views .row { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.browser { border-radius: 14px; overflow: hidden; box-shadow: 0 10px 30px rgba(16, 36, 58, .12); background: #fff; height: 288px; display: flex; flex-direction: column; }
+.browser .bar { height: 38px; background: var(--sand); display: flex; align-items: center; gap: 8px; padding: 0 14px; flex: none; }
+.browser .bar i { width: 11px; height: 11px; border-radius: 50%; background: #bdb6a8; }
+.browser .bar span { margin-left: 14px; background: #fff; border-radius: 6px; padding: 4px 12px; font: 500 15px var(--body); color: var(--brand); }
+.browser .view { flex: 1; position: relative; overflow: hidden; }
+.browser .over { position: absolute; left: 24px; top: 20px; font: 500 34px/1 var(--display); letter-spacing: .08em; color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.25); }
+.browser .msg { position: absolute; left: 32px; right: 32px; top: 50%; transform: translateY(-50%); border: 1px solid #d3d3d3; border-radius: 4px; padding: 20px 26px; font: 400 22px/1.3 Helvetica, Arial, sans-serif; color: #333; }
+.verdict { display: flex; align-items: center; gap: 14px; margin-top: 20px; font: 700 26px var(--body); color: var(--brand); }
+.verdict b { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+.verdict.ok b { background: var(--good-bg); color: var(--good); }
+.verdict.no b { background: var(--warn-bg); color: var(--warn); }
+.s-views .note { margin-top: 18px; font: 500 20px/1.45 var(--body); color: var(--text); }
+
+/* 9 gauge */
+.s-gauge .body { display: grid; grid-template-columns: 520px 1fr; gap: 70px; align-items: center; }
+.gauge svg { width: 100%; height: auto; display: block; }
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.tile { border-radius: 16px; padding: 24px 16px 22px; text-align: center; }
+.tile .v { font: 600 64px/1 var(--display); }
+.tile .l { margin-top: 10px; font: 500 19px/1.3 var(--body); color: var(--text); }
+.tile.bad { background: var(--warn-bg); } .tile.bad .v { color: var(--warn); }
+.tile.good { background: var(--good-bg); } .tile.good .v { color: var(--good); }
+.s-gauge .say { margin-top: 26px; font: 500 23px/1.55 var(--body); color: var(--text); }
+.s-gauge .say b { color: var(--brand); }
+
+/* 10 before and after boxes */
+.s-boxes .row { display: grid; grid-template-columns: 1fr 1fr; gap: 38px; margin-top: 68px; }
+.panel { border-radius: 16px; padding: 34px 28px 30px; text-align: center; }
+.panel.before { background: var(--sand); } .panel.after { background: var(--good-bg); }
+.boxes { display: flex; justify-content: center; gap: 22px; }
+.box { width: 128px; height: 116px; border-radius: 10px; background: #d8c39e; border: 3px solid #b0915f; position: relative; display: flex; align-items: center; justify-content: center; }
+.box::after { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 2px solid #b0915f; }
+.box span { position: relative; z-index: 1; font: 600 48px/1 var(--display); color: #8a6a3c; }
+.box b { position: relative; z-index: 1; background: #fff; border: 2px solid var(--brand); border-radius: 6px; padding: 6px 12px; font: 700 18px/1 var(--body); color: var(--brand); }
+.panel .say { margin-top: 26px; font: 700 23px/1.45 var(--body); color: var(--brand); }
+.s-boxes .note { margin-top: 18px; font: 500 20px/1.45 var(--body); color: var(--text); }
+
+/* 11 stack */
+.s-stack .body { display: grid; grid-template-columns: 520px 1fr; gap: 40px; align-items: center; }
+.stack { display: flex; flex-direction: column-reverse; align-items: center; gap: 8px; }
+.stack div { width: 340px; height: 50px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font: 700 19px var(--body); color: #fff; }
+.stack div:nth-child(1) { background: var(--ink); width: 356px; }
+.stack div:nth-child(2) { background: var(--brand); width: 336px; }
+.stack div:nth-child(3) { background: color-mix(in srgb, var(--brand) 55%, #3a8a8c); width: 316px; }
+.stack div:nth-child(4) { background: color-mix(in srgb, var(--brand) 35%, #4a9aa0); width: 300px; transform: rotate(-1.2deg) translateX(-8px); }
+.stack div:nth-child(5) { background: var(--accent); width: 274px; transform: rotate(2deg) translateX(16px); }
+.stack div:nth-child(6) { background: var(--warn); width: 240px; transform: rotate(-3.5deg) translateX(-14px); }
+.s-stack .say { font: 600 36px/1.45 var(--display); color: var(--brand); }
+.s-stack .more { margin-top: 18px; font: 500 23px/1.5 var(--body); color: var(--text); }
+
+/* 12 same look, new engine */
+.s-same .row { display: grid; grid-template-columns: 332px 1fr 1fr; gap: 24px; height: 332px; margin-top: 56px; }
+.s-same .pic { position: relative; border-radius: 16px; overflow: hidden; }
+.s-same .pic .badge { position: absolute; left: 20px; top: 20px; background: var(--accent); color: #fff; border-radius: 999px; padding: 12px 22px; font: 600 30px/1 var(--display); }
+.s-same .card, .s-same .after { padding: 30px 28px 0; border-radius: 16px; }
+.s-same .after { background: var(--good-bg); }
+.s-same h3 { margin-bottom: 14px; }
+.s-same .checks li { font-size: 21px; }
+
+/* 13 steps */
+.s-steps .row { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 64px; position: relative; }
+.s-steps .row::before { content: ""; position: absolute; left: 12.5%; right: 12.5%; top: 56px; border-top: 2px solid #d1cbbd; }
+.step { text-align: center; position: relative; padding: 0 6px; }
+.step .dot { width: 112px; height: 112px; border-radius: 50%; background: var(--ink); margin: 0 auto 26px; display: flex; align-items: center; justify-content: center; }
+.step .dot .ic { width: 50px; height: 50px; color: #fff; }
+.step h3 { font-size: 32px; }
+.step p { margin-top: 8px; font: 500 18px/1.4 var(--body); color: var(--text); }
+.pills { display: flex; justify-content: center; gap: 16px; margin-top: 30px; }
+.pills span { background: var(--good-bg); color: var(--good); border-radius: 999px; padding: 12px 22px; font: 700 19px var(--body); }
+
+/* 14 example card */
+.s-card .body { display: grid; grid-template-columns: 420px 1fr; gap: 46px; align-items: center; top: 176px; }
+.excard { background: var(--ink); border-radius: 22px; padding: 30px 30px 28px; color: #fff; position: relative; box-shadow: 0 12px 30px rgba(16, 36, 58, .2); }
+.excard .tag { position: absolute; right: 18px; top: 16px; font: 700 13px var(--body); letter-spacing: .14em; color: var(--accent-soft); }
+.excard .logo { width: 50px; height: auto; display: block; }
+.excard h4 { margin: 22px 0 16px; font: 600 28px/1.2 var(--display); }
+.excard .qr { display: grid; grid-template-columns: 150px 1fr; gap: 18px; align-items: center; }
+.excard .qr img { width: 150px; height: 150px; border-radius: 8px; display: block; }
+.excard .qr p { font: 500 17px/1.5 var(--body); color: #e8ecf1; }
+.excard .gift { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, .25); font: 600 17px/1.45 var(--body); color: var(--accent-soft); }
+.numbered { list-style: none; margin: 0; padding: 0; counter-reset: n; }
+.numbered li { counter-increment: n; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: center; margin-bottom: 14px; font: 500 21px/1.4 var(--body); color: var(--brand); }
+.numbered li::before { content: counter(n); width: 44px; height: 44px; border-radius: 50%; background: var(--ink); color: var(--accent-soft); display: flex; align-items: center; justify-content: center; font: 600 22px var(--display); }
+.warnnote { background: var(--warn-bg); color: var(--warn); border-radius: 12px; padding: 14px 18px; font: 600 17px/1.45 var(--body); margin-top: 6px; }
+.aim { margin-top: 16px; font: 700 21px/1.4 var(--body); color: var(--brand); }
+
+/* 15 chips: before and after */
+.s-chips .row { display: grid; grid-template-columns: 545px 1fr 444px; gap: 26px; align-items: center; margin-top: 30px; }
+.cloud { background: var(--sand); border-radius: 16px; padding: 16px 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 12px; height: 336px; align-content: center; }
+.cloud span { border: 2px solid #ddd6c8; background: #fff; border-radius: 8px; padding: 7px 12px; font: 700 17px/1.2 var(--body); color: var(--brand); }
+.cloud span small { font-weight: 500; font-size: 16px; color: var(--text); }
+.cloud span.g { border-color: #9fb9d8; } .cloud span.t { border-color: #9fd0b6; }
+.cloud span.w { border-color: var(--warn-line); background: var(--warn-bg); color: var(--warn); }
+.s-chips .arrow { color: var(--accent); width: 56px; height: 40px; }
+.afterlist { background: var(--good-bg); border-radius: 16px; padding: 18px 26px; height: 336px; display: flex; align-items: center; }
+.afterlist .checks li { border: 0; padding: 7px 0 7px 32px; font-size: 19px; }
+.afterlist .checks li::before { top: 7px; }
+.s-chips .caps { display: grid; grid-template-columns: 545px 1fr 444px; gap: 26px; margin-top: 12px; font: 700 18px var(--body); color: var(--text); text-align: center; }
+
+/* 16 phases */
+.s-phases .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; height: 310px; }
+.s-phases .card { padding: 22px 22px 0; }
+.s-phases h3 { margin: 14px 0 10px; font-size: 26px; line-height: 1.2; }
+.s-phases p { font: 500 17px/1.5 var(--body); color: var(--text); }
+.s-phases .band { margin-top: 24px; padding: 18px 40px; }
+
+/* 17 clock */
+.rows { display: flex; flex-direction: column; gap: 10px; }
+.trow { display: grid; grid-template-columns: 210px 1fr 360px; gap: 18px; align-items: center; padding: 12px 20px; min-height: 78px; }
+.trow .when { font: 600 28px/1.1 var(--display); color: var(--brand); }
+.trow .what { font: 500 20px/1.4 var(--body); color: var(--brand); }
+.trow .res { background: var(--good-bg); color: var(--good); border-radius: 8px; padding: 9px 12px; font: 700 17px/1.35 var(--body); }
+.trow .res.aim { background: var(--accent); color: #fff; }
+.s-clock .note { margin-top: 14px; font: 500 20px/1.5 var(--body); color: var(--text); }
+
+/* 18 four facts */
+.s-facts .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; height: 316px; margin-top: 16px; }
+.s-facts .card { text-align: center; padding: 34px 22px 0; }
+.s-facts .ic { width: 56px; height: 56px; }
+.s-facts .v { margin-top: 18px; font: 600 58px/1 var(--display); color: var(--brand); }
+.s-facts .l { margin-top: 16px; font: 500 19px/1.4 var(--body); color: var(--brand); }
+.s-facts .band { margin-top: 24px; padding: 18px; }
+
+/* 19 value */
+.s-value .row { display: grid; grid-template-columns: 1fr 70px 1fr; gap: 16px; align-items: center; margin-top: 56px; }
+.vbox { border-radius: 16px; padding: 28px 20px 26px; text-align: center; height: 180px; }
+.vbox.good { background: var(--good-bg); }
+.vbox .k { font: 500 19px var(--body); color: var(--text); }
+.vbox .n { margin: 10px 0 6px; font: 600 62px/1 var(--display); color: #44556b; }
+.vbox.good .n { color: var(--good); }
+.s-value .gt { font: 600 64px/1 var(--display); color: var(--accent); text-align: center; }
+.s-value .points { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 56px; margin-top: 28px; }
+.point { display: grid; grid-template-columns: 40px 1fr; gap: 16px; align-items: start; font: 500 21px/1.45 var(--body); color: var(--brand); margin-bottom: 14px; }
+.point::before { content: "✓"; width: 38px; height: 38px; border-radius: 50%; background: var(--good-bg); color: var(--good); display: flex; align-items: center; justify-content: center; font-weight: 700; }
+
+/* 20 simple price */
+.s-price .row { display: grid; grid-template-columns: 560px 1fr; gap: 26px; margin-top: 18px; height: 366px; }
+.pcard { background: var(--ink); color: #fff; border-radius: 18px; padding: 32px 32px 28px; }
+.pcard .k { font: 700 15px var(--body); letter-spacing: .16em; text-transform: uppercase; color: var(--accent-soft); }
+.pcard .n { margin: 10px 0 12px; font: 600 64px/1 var(--display); }
+.pcard p { font: 500 18px/1.55 var(--body); color: #e3e8ee; }
+.pcard hr { border: 0; border-top: 1px solid rgba(255, 255, 255, .22); margin: 22px 0 18px; }
+.pcard .free { margin-top: 6px; font: 600 52px/1 var(--display); color: var(--accent-soft); }
+.lines { display: flex; flex-direction: column; gap: 14px; }
+.pline { flex: 1; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 0 24px; }
+.pline b { display: block; font: 700 22px/1.2 var(--body); color: var(--brand); }
+.pline small { display: block; margin-top: 2px; font: 500 16px/1.35 var(--body); color: var(--text); }
+.pline .amt { font: 600 32px/1 var(--display); color: var(--brand); white-space: nowrap; }
+.s-price .total { margin-top: 16px; text-align: center; font: 500 23px var(--body); color: var(--brand); }
+.s-price .total b { font-weight: 700; }
+
+/* 21 next step */
+.next .eyebrow { left: 80px; top: 66px; }
+.next h1 { position: absolute; left: 80px; top: 96px; width: 700px; margin: 0; font: 600 64px/1.18 var(--display); color: #fff; }
+.next ol { position: absolute; left: 80px; top: 286px; width: 760px; list-style: none; margin: 0; padding: 0; counter-reset: n; }
+.next ol li { counter-increment: n; display: flex; align-items: center; gap: 20px; margin-bottom: 15px; font: 500 23px/1.3 var(--body); color: #fff; }
+.next ol li::before { content: counter(n); flex: none; width: 48px; height: 48px; border-radius: 50%; background: var(--accent-soft); color: var(--ink); display: flex; align-items: center; justify-content: center; font: 700 20px var(--body); }
+.next .cta { position: absolute; left: 80px; top: 626px; background: var(--accent); color: #fff; border-radius: 10px; padding: 16px 30px; font: 700 23px var(--body); }
+
+/* optional: scores, customer groups, season */
+.s-scores .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; height: 330px; margin-top: 20px; }
+.s-scores .card { padding: 34px 30px 0; }
+.s-scores .v { font: 600 80px/1 var(--display); color: var(--brand); }
+.s-scores .v small { font-size: 32px; color: var(--text); }
+.s-scores .v.bad { color: var(--warn); }
+.s-scores h3 { margin-top: 16px; font-size: 30px; }
+.s-scores p { margin-top: 10px; font: 500 19px/1.45 var(--body); color: var(--text); }
+.s-groups .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; height: 372px; margin-top: 4px; }
+.s-groups .card { padding: 28px 26px 0; }
+.s-groups .who { margin: 6px 0 16px; font: 500 18px/1.4 var(--body); color: var(--text); }
+.s-groups .q { display: flex; justify-content: space-between; gap: 10px; align-items: center; padding: 11px 0; border-top: 1px solid var(--line); font: 500 19px/1.3 var(--body); color: var(--brand); }
+.s-groups .q i { font-style: normal; font: 700 15px var(--body); border-radius: 999px; padding: 5px 10px; white-space: nowrap; }
+.s-groups .q i.y { background: var(--good-bg); color: var(--good); } .s-groups .q i.n { background: var(--warn-bg); color: var(--warn); }
+.s-season .body { display: grid; grid-template-columns: 1fr 340px; gap: 44px; align-items: end; }
+.bars { height: 320px; margin-bottom: 34px; display: grid; grid-template-columns: repeat(12, 1fr); gap: 10px; align-items: end; }
+.bars .b { position: relative; background: #d9cfbd; border-radius: 6px 6px 0 0; }
+.bars .b.peak { background: var(--accent); }
+.bars .b span { position: absolute; bottom: -30px; left: 0; right: 0; text-align: center; font: 600 15px var(--body); color: var(--text); }
+.s-season .say { font: 600 34px/1.35 var(--display); color: var(--brand); margin-bottom: 40px; }
+.s-season .cap { margin-top: 48px; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Line icons, 24 x 24. Use: <svg class="ic"><use href="#ic-web"/></svg>. class="a" parts take --accent. -->
+    <symbol id="ic-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path class="a" stroke="currentColor" d="M7 9h10" style="color:var(--accent)"/><path d="M7 13h8M7 16h5"/></symbol>
+    <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.2 7-12.5A7 7 0 0 0 5 9.5C5 14.8 12 22 12 22z"/><circle cx="12" cy="9.5" r="2.4" style="color:var(--accent)" stroke="currentColor"/></symbol>
+    <symbol id="ic-ai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-4 3v-3H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><path d="M12 7.6l1 2.4 2.4 1-2.4 1-1 2.4-1-2.4-2.4-1 2.4-1z" fill="currentColor" stroke="none" style="color:var(--accent)"/></symbol>
+    <symbol id="ic-web" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M3 8h18"/><path d="M12 17v3M8.5 20.5h7" style="color:var(--accent)" stroke="currentColor"/></symbol>
+    <symbol id="ic-qr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><path d="M14 14h2.5M14 17.5h1M19 14v2.5M17.5 20h3M20.5 17v3" style="color:var(--accent)" stroke="currentColor"/></symbol>
+    <symbol id="ic-net" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="2.6" stroke="currentColor"/><path d="M9.9 10.2L6.4 6.6M14.1 10.2l3.5-3.6M9.9 13.8l-3.5 3.6M14.1 13.8l3.5 3.6" stroke="currentColor"/><g stroke="var(--accent)"><circle cx="5" cy="5.2" r="2"/><circle cx="19" cy="5.2" r="2"/><circle cx="5" cy="18.8" r="2"/><circle cx="19" cy="18.8" r="2"/></g></symbol>
+    <symbol id="ic-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5.2 5.2l-8.3 8.3a2.1 2.1 0 0 1-3-3l8.3-8.3a4 4 0 0 1-2.2-2.2z"/></symbol>
+    <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.3 15.3L20 20M7.8 10.6l1.9 1.9 3.2-3.4"/></symbol>
+    <symbol id="ic-swap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h15l-4-4M20 16H5l4 4"/></symbol>
+    <symbol id="ic-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></symbol>
+    <symbol id="ic-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 9A8 8 0 0 0 5 7.5M4.5 15A8 8 0 0 0 19 16.5"/><path d="M5 3.5v4h4M19 20.5v-4h-4" style="color:var(--accent)" stroke="currentColor"/></symbol>
+    <symbol id="ic-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4 4.5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9.5L6 20v-3.5H4a1 1 0 0 1-1-1v-10a1 1 0 0 1 1-1z"/><path d="M9 10.5h6" stroke-linecap="round" style="color:var(--accent)" stroke="currentColor"/></symbol>
+    <symbol id="ic-boat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13M12 4l6 10h-6" style="color:var(--accent)" stroke="currentColor"/><path d="M3.5 17h17l-2.5 3.5h-12z"/></symbol>
+    <symbol id="ic-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z" fill="var(--accent)"/></symbol>
+    <symbol id="ic-arrow" viewBox="0 0 56 40" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h44M36 8l12 12-12 12"/></symbol>
+  </defs>
+</svg>
+
+<!-- 1 COVER -->
+<section class="slide cover photo" style="background-image:url('img/storefront.jpg')">
+  <img class="logo" src="img/logo.jpg" alt="Sunshine Wash &amp; Dry" style="border-radius:50%;width:96px">
+  <div class="eyebrow">Results report · 27 October 2026</div>
+  <h1>More people now find Sunshine</h1>
+  <p class="sub">Before and after, on Google, on Google Maps<br>and in AI answers. 17 to 26 October 2026.</p>
+</section>
+
+<!-- 2 THE 30-SECOND VERSION -->
+<section class="slide s-short">
+  <div class="eyebrow">The 30-second version</div>
+  <h2>Three things to know</h2>
+  <div class="body">
+    <div class="card"><div class="n">1</div><div><h3>Google lists you more often</h3><p>On page 1 for 10 of 13 searches we track, up from 7.</p></div></div>
+    <div class="card"><div class="n">2</div><div><h3>Google Maps puts you first</h3><p>#1 near the shop for 3 of 7 searches, up from none.</p></div></div>
+    <div class="card"><div class="n">3</div><div><h3>Next: reviews and wash-and-fold</h3><p>AI answers name you for "where to wash", not yet for drop-off wash and fold.</p></div></div>
+  </div>
+  <div class="foot"><span>Sunshine Wash &amp; Dry · October 2026</span><span class="pn"></span></div>
+</section>
+
+<!-- 3 THREE DOORS, BEFORE AND AFTER -->
+<section class="slide s-doors">
+  <div class="eyebrow">How people find a laundromat</div>
+  <h2>Three doors, before and after</h2>
+  <div class="body">
+    <div class="row">
+      <div class="card"><svg class="ic"><use href="#ic-list"/></svg><h3>Google's list</h3><p>On page 1 for<br><b style="font-size:30px;color:var(--brand)">7 → 10</b> of 13 searches</p></div>
+      <div class="card"><svg class="ic"><use href="#ic-pin"/></svg><h3>Google Maps</h3><p>First near the shop for<br><b style="font-size:30px;color:var(--brand)">0 → 3</b> of 7 searches</p></div>
+      <div class="card"><svg class="ic"><use href="#ic-ai"/></svg><h3>AI answers</h3><p>Named, first, in<br><b style="font-size:30px;color:var(--brand)">2</b> of 10 questions</p></div>
+    </div>
+    <div class="band">Most people choose from the <em>first 3</em> behind each door.</div>
+  </div>
+  <div class="foot"><span>Before: 17 Oct (Google), 18 Oct (Maps). After: 26 Oct. AI answers first checked 26 Oct.</span><span class="pn"></span></div>
+</section>
+
+<!-- 4 GOOGLE'S LIST -->
+<section class="slide s-proof">
+  <div class="eyebrow">Door 1 · Google's list</div>
+  <h2>The new pages already rank</h2>
+  <div class="body">
+    <div class="stats">
+      <div class="stat"><div class="v">#1</div><div class="l">ซักผ้านวม บางพลี<br>Not on page 1 before.</div></div>
+      <div class="stat"><div class="v">#2</div><div class="l">ซักอบพับ เสาร์อาทิตย์<br>Not on page 1 before.</div></div>
+      <div class="stat"><div class="v small">7 → 2</div><div class="l">ฝากซักผ้า บางพลี</div></div>
+    </div>
+    <div>
+      <div class="proof"><img src="img/serp.jpg" alt="Google results for ซักผ้านวม บางพลี with the Sunshine comforter page first"></div>
+      <p class="cap"><b>Proof:</b> Google, "ซักผ้านวม บางพลี", 26 Oct 2026, signed out.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Sunshine Wash &amp; Dry · October 2026</span><span class="pn"></span></div>
+</section>
+
+<!-- 5 GOOGLE MAPS -->
+<section class="slide s-proof">
+  <div class="eyebrow">Door 2 · Google Maps, near the shop</div>
+  <h2>First on the map</h2>
+  <div class="body">
+    <div class="stats">
+      <div class="stat"><div class="v small">7 → 1</div><div class="l">ร้านสะดวกซัก</div></div>
+      <div class="stat"><div class="v small">– → 1</div><div class="l">ซักอบพับ<br>Not listed before.</div></div>
+      <div class="stat"><div class="v small">6 → 2</div><div class="l">ร้านซักผ้า</div></div>
+    </div>
+    <div>
+      <div class="proof"><img src="img/maps.jpg" alt="Google Maps list for ซักอบพับ with Sunshine first"></div>
+      <p class="cap"><b>Proof:</b> Google Maps, "ซักอบพับ", at the shop, 26 Oct 2026.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Sunshine Wash &amp; Dry · October 2026</span><span class="pn"></span></div>
+</section>
+
+<!-- 6 AI ANSWERS -->
+<section class="slide s-proof">
+  <div class="eyebrow">Door 3 · AI answers</div>
+  <h2>Google's AI recommends you first</h2>
+  <div class="body">
+    <div class="stats">
+      <div class="stat"><div class="v small">2 of 10</div><div class="l">questions where Google's AI names you, first both times</div></div>
+      <div class="stat"><div class="v">12</div><div class="l">times your website showed in AI answers, 16 to 24 Oct</div></div>
+    </div>
+    <div>
+      <div class="proof"><img src="img/ai.jpg" alt="Google AI Mode answer naming Sunshine first"><i class="mark" data-box="8,39,65,17"></i></div>
+      <p class="cap"><b>Proof:</b> Google AI Mode, "ร้านซักผ้า บางพลี ที่ไหนดี", 27 Oct 2026.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Sunshine Wash &amp; Dry · October 2026</span><span class="pn"></span></div>
+</section>
+
+<!-- 7 WHAT WE DID -->
+<section class="slide s-pillars">
+  <div class="eyebrow">What we did</div>
+  <h2>Three pieces of work</h2>
+  <div class="body">
+    <div class="row">
+      <div class="card"><svg class="ic"><use href="#ic-web"/></svg><div class="num">1</div><h3>Website</h3><span class="chip">17 October</span>
+        <ul class="checks"><li>Wash-and-fold page</li><li>Comforter page</li><li>Titles in the words people search</li></ul></div>
+      <div class="card"><svg class="ic"><use href="#ic-pin"/></svg><div class="num">2</div><h3>Maps listing</h3><span class="chip">26 October</span>
+        <ul class="checks"><li>New description</li><li>Wash-and-fold service added</li><li>LINE only, no phone</li></ul></div>
+      <div class="card"><svg class="ic"><use href="#ic-check"/></svg><div class="num">3</div><h3>Google and Bing</h3><span class="chip">17 October</span>
+        <ul class="checks"><li>All 6 pages in Google</li><li>Site registered with Bing</li><li>Secure address (https) always</li></ul></div>
+    </div>
+    <div class="band">Then a <em>monthly check</em>, with the same searches every time.</div>
+  </div>
+  <div class="foot"><span>Sunshine Wash &amp; Dry · October 2026</span><span class="pn"></span></div>
+</section>
+
+<!-- 8 WHERE WE STILL MISS -->
+<section class="slide s-proof bad">
+  <div class="eyebrow">Still to win</div>
+  <h2>Where you still miss out</h2>
+  <div class="body">
+    <div class="stats">
+      <div class="stat"><div class="v small">0 of 3</div><div class="l">wash-and-fold questions where AI names you</div></div>
+      <div class="stat"><div class="v small">Not page 1</div><div class="l">ซักอบพับ ฟรี, ร้านซักผ้า บางนา, ร้านสะดวกซัก ราชาเทวะ</div></div>
+      <div class="stat"><div class="v small">4 → 6</div><div class="l">laundromat bang phli, on Google's list</div></div>
+    </div>
+    <div>
+      <div class="card" style="padding:34px 36px">
+        <h3 style="font-size:30px">Who AI picked instead</h3>
+        <p style="margin-top:14px;font:500 21px/1.5 var(--body);color:var(--text)">For the 3 wash-and-fold questions, Google's AI listed <b style="color:var(--brand)">ironing shops and pickup services</b>, not laundromats.</p>
+        <p style="margin-top:16px;font:700 21px/1.5 var(--body);color:var(--good)">Done 26 Oct: wash-and-fold added to your Maps listing. Next: reviews that mention ฝากซักอบพับ.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Sunshine Wash &amp; Dry · October 2026</span><span class="pn"></span></div>
+</section>
+
+<!-- 9 REVIEWS -->
+<section class="slide s-card">
+  <div class="eyebrow">Next · Reviews</div>
+  <h2>A review card for the counter</h2>
+  <div class="body">
+    <div style="display:flex;justify-content:center"><div class="proof" style="width:300px"><img src="img/card.png" alt="Printable review card with QR codes for Google reviews and LINE"></div></div>
+    <div>
+      <ol class="numbered"><li>Print it and put it at the counter and on the folding table.</li><li>Customers scan it; it opens your Google review page.</li><li>Ask them to say which service they used: ฝากซักอบพับ, ผ้านวม.</li></ol>
+      <p class="warnnote">Ask every customer, not only happy ones, and never give a reward for a review. Google removes those reviews and can penalise the listing.</p>
+      <p class="aim">Aim: named in wash-and-fold AI answers by the 17 November check.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Sunshine Wash &amp; Dry · October 2026</span><span class="pn"></span></div>
+</section>
+
+<!-- 10 WHEN -->
+<section class="slide s-clock">
+  <div class="eyebrow">What happens next, and when</div>
+  <h2>The next four weeks</h2>
+  <div class="body">
+    <div class="rows">
+      <div class="card trow"><div class="when">This week</div><div class="what">Review card printed; photos of folded baskets and 18 kg machines added to Maps.</div><div class="res">More reviews that name the service</div></div>
+      <div class="card trow"><div class="when">When allowed</div><div class="what">Once Google turns Maps posts back on: one post a week about the weekend service.</div><div class="res">Listing looks active</div></div>
+      <div class="card trow"><div class="when">17 Nov</div><div class="what">Full re-check: same searches, same method, same AI questions.</div><div class="res aim">Aim: 11 of 13 on page 1</div></div>
+      <div class="card trow"><div class="when">17 Dec</div><div class="what">Second re-check, and decide the next pages to build.</div><div class="res">Two months of trend</div></div>
+    </div>
+    <p class="note">Google usually takes 2 to 8 weeks to settle after changes. Aims, not guarantees.</p>
+  </div>
+  <div class="foot"><span>Sunshine Wash &amp; Dry · October 2026</span><span class="pn"></span></div>
+</section>
+
+<!-- 11 NEXT STEP -->
+<section class="slide next photo" style="background-image:url('img/storefront.jpg')">
+  <div class="eyebrow">What we need from you</div>
+  <h1>Three small things</h1>
+  <ol><li>Print the review card</li><li>Send photos: folded baskets, 18 kg machines, the shop at night</li><li>Confirm the drying time: 28 minutes, or 30 and 40?</li></ol>
+  <div class="cta">Next check: 17 November 2026</div>
+</section>
+<script>
+(() => {
+  const slides = [...document.querySelectorAll('.slide')];
+  slides.forEach((s, i) => { const pn = s.querySelector('.pn'); if (pn) pn.textContent = String(i + 1).padStart(2, '0'); });
+  const num = (v) => Number(String(v).replace(/[^0-9.\-]/g, ''));
+  const NS = 'http://www.w3.org/2000/svg';
+
+  // Gauge: semicircle from 0 to data-max, green up to data-goal, needle at data-value.
+  for (const g of document.querySelectorAll('.gauge')) {
+    const v = num(g.dataset.value), goal = num(g.dataset.goal), max = num(g.dataset.max) || 1, unit = g.dataset.unit ?? '';
+    const cx = 260, cy = 270, r = 205, sw = 46;
+    const pt = (t, rr = r) => { const a = Math.PI * (1 - Math.max(0, Math.min(1, t))); return [cx + rr * Math.cos(a), cy - rr * Math.sin(a)]; };
+    const arc = (t0, t1) => { const [x0, y0] = pt(t0), [x1, y1] = pt(t1); return `M${x0} ${y0} A${r} ${r} 0 0 1 ${x1} ${y1}`; };
+    const [nx, ny] = pt(v / max, r - 52), [gx, gy] = pt(goal / max, r + 46);
+    g.innerHTML = `<svg viewBox="0 0 520 330" xmlns="${NS}">
+      <path d="${arc(0, 1)}" fill="none" stroke="#e2d9c6" stroke-width="${sw}" stroke-linecap="round"/>
+      <path d="${arc(0, goal / max)}" fill="none" stroke="var(--good)" stroke-width="${sw}" stroke-linecap="round"/>
+      <line x1="${cx}" y1="${cy}" x2="${nx}" y2="${ny}" stroke="var(--ink)" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="${cx}" cy="${cy}" r="21" fill="var(--ink)"/>
+      <text x="${cx - r}" y="${cy + 52}" text-anchor="middle" font-family="Anuphan, sans-serif" font-weight="700" font-size="24" fill="#4c5561">0 ${unit}</text>
+      <text x="${cx + r}" y="${cy + 52}" text-anchor="middle" font-family="Anuphan, sans-serif" font-weight="700" font-size="24" fill="#4c5561">${max} ${unit}</text>
+      <text x="${gx}" y="${gy}" text-anchor="middle" font-family="Anuphan, sans-serif" font-weight="700" font-size="25" fill="var(--good)">${g.dataset.goalLabel ?? 'Goal'}: ${goal} ${unit}</text>
+    </svg>`;
+  }
+
+  // Season bars from data-values; months listed in data-peak are drawn in the accent colour.
+  const M = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  for (const b of document.querySelectorAll('.bars')) {
+    const vals = (b.dataset.values || '').split(',').map(num).filter((x) => !Number.isNaN(x)).slice(-12);
+    const peak = (b.dataset.peak || '').split(',').map(num);
+    const top = Math.max(1, ...vals);
+    b.innerHTML = vals.map((x, i) => `<div class="b${peak.includes(i + 1) ? ' peak' : ''}" style="height:${Math.round((x / top) * 100)}%"><span>${M[i]}</span></div>`).join('');
+  }
+
+  // First-year total on the price slide: one-off amounts + monthly x months.
+  for (const t of document.querySelectorAll('[data-year1]')) {
+    const s = t.closest('.slide');
+    let total = 0;
+    s.querySelectorAll('[data-amount]').forEach((e) => { total += num(e.dataset.amount) || 0; });
+    s.querySelectorAll('[data-monthly]').forEach((e) => { total += (num(e.dataset.monthly) || 0) * (num(e.dataset.months) || 0); });
+    t.textContent = `THB ${total.toLocaleString('en-US')}`;
+  }
+
+  // Optional highlight boxes on screenshots: <i class="mark" data-box="x,y,w,h"></i> in % of the image.
+  for (const m of document.querySelectorAll('.mark[data-box]')) {
+    const [x, y, w, h] = m.dataset.box.split(',').map(num);
+    Object.assign(m.style, { left: `${x}%`, top: `${y}%`, width: `${w}%`, height: `${h}%` });
+  }
+})();
+</script>
+</body>
+</html>
